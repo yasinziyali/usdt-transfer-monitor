@@ -94,7 +94,8 @@ npm run dev
 ---
 
 <h2 id="architecture">🏗 Architecture</h2>
-``` text
+
+```text
 ⚡ SYSTEM FLOW
 
 🟣 Ethereum Mainnet
@@ -127,7 +128,7 @@ npm run dev
 This project requires sensitive configuration values to run properly.  
 The `.env` file is **not included in the repository on purpose** for security reasons.
 
-You must manually create a `.env` file inside the `backend/` directory using the structure shown below:
+You must manually create a `.env` file inside the `backend/` directory using the structure below:
 
 ```env
 ALCHEMY_RPC_URL=your_alchemy_rpc_url
