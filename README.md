@@ -115,9 +115,11 @@ npm run dev
 
 ✔ Real-time USDT transfer monitoring  
 ✔ Ethereum mainnet event listening  
+✔ Transaction details include sender, receiver, amount and transaction hash  
 ✔ High-value transaction detection (≥ 100k USDT)  
 ✔ Firebase push notification system  
 ✔ Frontend live notification UI  
+
 
 ---
 
@@ -126,7 +128,7 @@ npm run dev
 ### Backend `.env`
 
 This project requires sensitive configuration values to run properly.  
-The `.env` file is **not included in the repository on purpose** for security reasons.
+For security reasons, sensitive files such as `.env` and Firebase service account credentials are **not included** in the repository.
 
 You must manually create a `.env` file inside the `backend/` directory using the structure below:
 
@@ -137,13 +139,57 @@ FIREBASE_KEY_PATH=./your-firebase-admin-key.json
 
 ---
 
+### Firebase Admin SDK Setup
+
+This project also requires a Firebase Admin SDK private key JSON file.
+
+#### Generate Firebase Service Account Key
+
+1. Open Firebase Console
+2. Go to **Project Settings**
+3. Navigate to **Service Accounts**
+4. Click **Generate new private key**
+5. Download the generated JSON file
+
+Place the downloaded JSON file inside the `backend/` directory.
+
+Example project structure:
+
+```text
+backend/
+│── .env
+│── your-firebase-admin-key.json
+│── src/
+```
+
+The `.env` file should reference the JSON file correctly:
+
+```env
+FIREBASE_KEY_PATH=./your-firebase-admin-key.json
+```
+
+---
+
+### Alchemy RPC Setup
+
+1. Create an account on Alchemy
+2. Create a new Ethereum Mainnet application
+3. Copy your HTTPS RPC URL
+4. Paste it into the `.env` file:
+
+```env
+ALCHEMY_RPC_URL=https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY
+```
+
+---
+
 <h2 id="demo">📸 Demo / System Output</h2>
 
 Below is a real example of the system in action.  
 The application successfully detects high-value USDT transfers and displays real-time notifications on the frontend.
 
 <p align="center">
-  <img src="assets/output.png" alt="USDT Monitoring System Demo" width="800" style="border-radius:10px;"/>
+  <img src="assets/demo.png" alt="USDT Monitoring System Demo" width="800" style="border-radius:10px;"/>
 </p>
 
 > Live demonstration of real-time USDT transfer detection and Firebase push notifications.
@@ -151,13 +197,13 @@ The application successfully detects high-value USDT transfers and displays real
 
 <h2 id="notes">📌 Notes</h2>
 
-- USDT contract decimals: **6**
 - Contract Address:
 ```
 0xdAC17F958D2ee523a2206206994597C13D831ec7
 ```
 
 - Only transfers ≥ 100,000 USDT are processed
+- Proper USDT decimal handling (6 decimals)
 - Firebase is used for real-time push notifications
 
 ---
