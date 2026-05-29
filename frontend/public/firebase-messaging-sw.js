@@ -2,11 +2,11 @@ importScripts("https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"
 importScripts("https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js");
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDfsnZ3Wqqw_Se3HAJp6v3qXMiqf4P0-2M",
-  authDomain: "usdt-alert-system.firebaseapp.com",
-  projectId: "usdt-alert-system",
-  messagingSenderId: "89194579566",
-  appId: "1:89194579566:web:30696d49f87bfe1a37887f"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 });
 
 // Uygulama kapalıyken gelen FCM mesajlarını işler
