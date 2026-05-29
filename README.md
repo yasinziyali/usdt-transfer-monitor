@@ -137,7 +137,6 @@ The `.env` file should reference the JSON file correctly:
 ```env
 FIREBASE_KEY_PATH=./your-firebase-admin-key.json
 ```
-
 ---
 
 ### Alchemy RPC Setup
@@ -150,6 +149,53 @@ FIREBASE_KEY_PATH=./your-firebase-admin-key.json
 ```env
 ALCHEMY_RPC_URL=https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY
 ```
+
+---
+
+### Frontend `.env.local`
+
+This project requires Firebase configuration values for the frontend application to enable authentication and Firebase Cloud Messaging (FCM) notifications.
+
+All values in this file are obtained from your Firebase project settings.
+
+You must manually create a `.env.local` file inside the `frontend/` directory using the structure below:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_VAPID_KEY=your_vapid_key
+
+---
+
+
+### Where to get these values
+
+#### 1. Firebase Configuration Values (`apiKey`, `authDomain`, `projectId`, `storageBucket`, `messagingSenderId`, `appId`)
+
+These values are required for Firebase initialization in the frontend.
+
+1. Go to **Firebase Console**
+2. Open your project
+3. Navigate to **Project Settings**
+4. Under the **General** tab, scroll to **Your apps**
+5. Select your Web App configuration
+6. Copy the Firebase SDK configuration values
+
+---
+
+#### 2. VAPID Key (Web Push Certificate)
+
+This key is required for Firebase Cloud Messaging (FCM) web push notifications.
+
+1. Go to **Firebase Console**
+2. Open your project
+3. Navigate to **Project Settings**
+4. Go to **Cloud Messaging**
+5. Under **Web Push certificates**, generate or copy your VAPID key
 
 ---
 
