@@ -11,9 +11,9 @@
 <p align="center">
  <a href="#tech">Technologies</a> • 
  <a href="#started">Getting Started</a> • 
+ <a href="#env">Environment</a> •
  <a href="#architecture">Architecture</a> •
  <a href="#features">Features</a> •
- <a href="#env">Environment</a> •
  <a href="#demo">Demo</a> •
  <a href="#notes">Notes</a> •
  <a href="#status">Status</a>
@@ -93,36 +93,6 @@ npm run dev
 
 ---
 
-<h2 id="architecture">🏗 Architecture</h2>
-
-```text
-⚡ SYSTEM FLOW
-
-🟣 Ethereum Mainnet
-        ↓
-🟡 NestJS Event Listener (Ethers.js)
-        ↓
-🔴 Filter Engine (≥ 100k USDT)
-        ↓
-🟠 Firebase Cloud Messaging (FCM)
-        ↓
-🟢 Next.js Frontend UI
-```
-
----
-
-<h2 id="features">✨ Features</h2>
-
-✔ Real-time USDT transfer monitoring  
-✔ Ethereum mainnet event listening  
-✔ Transaction details include sender, receiver, amount and transaction hash  
-✔ High-value transaction detection (≥ 100k USDT)  
-✔ Firebase push notification system  
-✔ Frontend live notification UI  
-
-
----
-
 <h2 id="env">🔐 Environment Variables</h2>
 
 ### Backend `.env`
@@ -180,6 +150,35 @@ FIREBASE_KEY_PATH=./your-firebase-admin-key.json
 ```env
 ALCHEMY_RPC_URL=https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY
 ```
+
+---
+
+<h2 id="architecture">🏗 Architecture</h2>
+
+```text
+⚡ SYSTEM FLOW
+
+🟣 Ethereum Mainnet
+        ↓
+🟡 NestJS Event Listener (Ethers.js)
+        ↓
+🔴 Filter Engine (≥ 100k USDT)
+        ↓
+🟠 Firebase Cloud Messaging (FCM)
+        ↓
+🟢 Next.js Frontend UI
+```
+
+---
+
+<h2 id="features">✨ Features</h2>
+
+✔ Real-time USDT transfer monitoring  
+✔ Ethereum mainnet event listening  
+✔ Transaction details include sender, receiver, amount and transaction hash  
+✔ High-value transaction detection (≥ 100k USDT)  
+✔ Firebase push notification system  
+✔ Frontend live notification UI  
 
 ---
 
